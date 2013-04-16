@@ -1,0 +1,311 @@
+
+/* --- common stuff --- */
+
+body {
+  background-image: url(background.gif);
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10pt;
+  margin: 0 auto 0 auto;
+  padding: 30px 30px 30px 30px;
+}
+
+@media print { body {
+  padding: 0;
+} }
+
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #e77919;
+}
+
+a img {
+  border-width: 0 0 0 0;
+}
+
+a.external {
+  background: url(external-link-normal.gif) no-repeat right;
+  padding-right: 10px;
+  margin-right: 5px;
+}
+
+a.external:hover {
+  background: url(external-link-hover.gif) no-repeat right;
+}
+
+a.selected {
+  border-bottom: 1px solid #e77919;
+  cursor: default;
+}
+
+a.selected:hover {
+  color: black;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: inherit;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+td {
+  border: 0 none;
+  padding: 0 0 0 0;
+  vertical-align: top;
+}
+
+div.clear {
+  clear: both;  	
+}
+
+
+
+/* --- layout --- */
+
+div#header {
+  background-color: white;
+  border: 1px solid #cccccc;
+  padding: 15px 15px 15px 15px;
+  margin-bottom: 5px;
+  font-size: 8pt;
+}
+
+@media print { div#header {
+  display: none;
+} }
+
+table#main_layout {
+  font-size: 10pt;
+  text-align: left;
+}
+
+div.topics {
+  background-color: white;
+  border: 1px solid #cccccc;
+  padding: 15px 15px 15px 15px;
+  font-size: 10pt;
+  margin-bottom: 5px;
+}
+
+@media print { .topics {
+  display: none;
+} }
+
+div#content {
+  background-color: white;
+  border: 1px solid #cccccc;
+  padding: 15px 15px 15px 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 10pt;
+  line-height: 20px;
+}
+
+@media print { div#content {
+  border-style: none;
+} }
+
+div.index {
+  background-color: white;
+  border: 1px solid #cccccc;
+  font-size: 10pt;
+  padding: 15px 15px 15px 15px;
+}
+
+@media print { .index {
+  display: none;
+} }
+
+div#footer {
+  font-size: 8pt;
+  border-top: 1px none #e77919;
+  height: 15px;
+  padding-top: 5px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+@media print { div#footer {
+  display: none;
+} }
+
+
+
+/* --- header --- */
+
+div#header table {
+ width: 100%;
+}
+
+div#header td#left {
+  width: 25%;
+  text-align: left;
+}
+
+div#header td#right {
+  width: 75%;
+}
+
+div#header #title {
+  color: #e77919;
+  font-weight: bold;
+  font-size: 10pt;
+  line-height: 20px;
+}
+
+div#header ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  float: right;
+  line-height: 20px;
+}
+
+div#header li {
+  display: inline;
+  float: left;
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid #e77919;
+}
+
+div#header li#last {
+  padding-right: 0;
+  margin-right: 0;
+  border-right-style: none;
+}
+
+
+
+/* --- topics --- */
+
+div.topics #title {
+  color: #e77919;
+  font-weight: bold;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+div.topics ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+div.topics ul li {
+  background: url(branch.gif) no-repeat top left;
+  line-height: 20px;
+  padding-left: 15px;
+  white-space: nowrap;
+}
+
+div.topics ul li ul li {
+  background: url(branch.gif) no-repeat top left;
+  line-height: 20px;
+  padding-left: 15px;
+  white-space: nowrap;
+}
+
+
+/* --- index --- */
+
+div.index #title {
+  color: #e77919;
+  font-weight: bold;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+div.index ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+div.index ul li {
+  background: url(branch.gif) no-repeat top left;
+  line-height: 20px;
+  padding-left: 15px;
+  white-space: nowrap;
+}
+
+
+
+/* --- content --- */
+
+div#content a {
+  border-bottom: 1px dashed #cccccc;
+}
+
+div#content a:hover {
+  border-bottom: 1px dashed #e77919;
+}
+
+div#content div.links a {
+  border-bottom-style: none;
+}
+
+div#content h1 {
+  color: #e77919;
+  border-bottom: 1px solid #cccccc;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+div#content h2 {
+  color: #e77919;
+  border-bottom: 1px solid #cccccc;
+  font-size: 10pt;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+div#content .h3 {
+  background: url(arrow-right.gif) no-repeat left;
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+div#content code {
+  font-weight: bold;
+  font-family: monospace;
+  display: inline;
+  white-space: nowrap;
+}
+
+div#content div.code {
+  font-weight: bold;
+  white-space: pre;
+  font-family: monospace;
+  background-color: #eeeeee;
+  padding: 5px 5px 5px 5px;
+  margin: 15px 15px 15px 15px;
+}
+
+div#content kbd {
+  font-weight: bold;
+  font-family: monospace;
+  display: inline;
+}
+
+div#content div.kbd {
+  font-weight: bold;
+  white-space: pre;
+  font-family: monospace;
+  background-color: #eeeeee;
+  padding: 5px 5px 5px 5px;
+  margin: 15px 15px 15px 15px;
+}
+
+
+/* eof */
+

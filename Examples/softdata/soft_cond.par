@@ -1,0 +1,31 @@
+
+// sample for soft data conditioning
+
+
+[ general ]
+
+1.0.0_RC3  = simpatc_version
+1      = analysis_level
+
+
+
+[ realizations ]
+
+100 100 1 = dimensions
+
+
+[ data ]
+
+soft_data.dat = soft_data.filename
+
+
+[ run ]
+
+ti.dat       = hard_training_image.filename
+soft_ti.dat  = soft_training_image.filename
+5 5 1        = hard_template_dimensions
+5 5 1        = soft_template_dimensions
+3            = #_of_multiple_grids
+2		= stop_after_multiple_grid
+
+// [ eof ]

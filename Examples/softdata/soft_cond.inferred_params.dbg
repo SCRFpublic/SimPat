@@ -1,0 +1,98 @@
+
+// Generated on Mon Mar 07 14:39:46 2005
+// from PAR file "M:/SCRF/BOSENI2005/software/SIMPAT/Examples/softdata/soft_cond.par"
+
+
+// these below values are used internally and given here for debugging
+// purposses only.  you can think of parameter lines with these values
+// as if they were commented out or defaulted
+//
+// nofile_keyword = nofile
+// unknown_uint = 4294967295
+// unknown_dims = 2147483647 2147483647 2147483647
+// unknown_steps = 2147483647 2147483647 2147483647
+
+
+[ general ]
+
+1.0.0_RC3 = simpatc_version
+1 = analysis_level
+
+
+[ realizations ]
+
+100 100 1 = dimensions
+soft_cond.out = filename
+19750929 = random_seed
+1 = #_of_realizations
+
+
+[ data ]
+
+nofile = init_data.filename
+1 = init_data.column_index
+nofile = hard_data.filename
+1 = hard_data.column_index
+soft_data.dat = soft_data.filename
+1 = soft_data.column_index
+1 = #_of_regions
+nofile = regions.filename
+1 = regions.column_index
+
+
+[ run ]
+
+ti.dat = hard_training_image.filename
+1 = hard_training_image.column_index
+soft_ti.dat = soft_training_image.filename
+1 = soft_training_image.column_index
+1 = sampling_frequency
+1 = #_of_hard_bands
+1 = #_of_soft_bands
+5 5 1 = hard_template_dimensions
+5 5 1 = soft_template_dimensions
+3 = #_of_simulations
+0 = #_of_multiple_grids
+2 = stop_after_multiple_grid
+
+
+[ simulation-1 ]
+
+ti.dat = hard_training_image.filename
+1 = hard_training_image.column_index
+soft_ti.dat = soft_training_image.filename
+1 = soft_training_image.column_index
+1 = sampling_frequency
+5 5 1 = hard_template_dimensions
+5 5 1 = soft_template_dimensions
+3 3 3 = hard_template_expansion
+3 3 3 = soft_template_expansion
+
+
+[ simulation-2 ]
+
+ti.dat = hard_training_image.filename
+1 = hard_training_image.column_index
+soft_ti.dat = soft_training_image.filename
+1 = soft_training_image.column_index
+1 = sampling_frequency
+5 5 1 = hard_template_dimensions
+5 5 1 = soft_template_dimensions
+2 2 2 = hard_template_expansion
+2 2 2 = soft_template_expansion
+
+
+[ simulation-3 ]
+
+ti.dat = hard_training_image.filename
+1 = hard_training_image.column_index
+soft_ti.dat = soft_training_image.filename
+1 = soft_training_image.column_index
+1 = sampling_frequency
+5 5 1 = hard_template_dimensions
+5 5 1 = soft_template_dimensions
+1 1 1 = hard_template_expansion
+1 1 1 = soft_template_expansion
+
+
+// [ eof ]

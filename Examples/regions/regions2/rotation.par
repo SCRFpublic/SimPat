@@ -1,0 +1,9 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               parameter file                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ti.dat.2.scale		        % the input file name
+ti.dat.2		% the output file name
+2			% method for data preparation (Rotation)
+125 125 1		% Field size after rotation
+0 0 90       		% Rotation angles

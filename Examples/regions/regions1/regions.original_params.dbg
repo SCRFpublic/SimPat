@@ -1,0 +1,10 @@
+_generated_on = Mon Mar 07 14:33:38 2005
+_par_filename = M:/SCRF/BOSENI2005/software/SIMPAT/Examples/regions/regions1/regions.par
+data.#_of_regions = 3
+data.regions.filename = regions.dat
+general.analysis_level = 1
+general.simpatc_version = 1.0.0_RC3
+realizations.dimensions = 100 100 1
+run.#_of_multiple_grids = 3
+run.hard_template_dimensions = 7 7 1
+run.hard_training_image.filename = ti.dat

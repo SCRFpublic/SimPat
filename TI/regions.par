@@ -1,0 +1,29 @@
+
+// sample for regions simulation
+
+
+[ general ]
+
+0.9.9  = simpatc_version
+1      = analysis_level
+1      = debug_level
+
+
+[ realizations ]
+
+100 100 1 = dimensions
+
+
+[ data ]
+
+tworegions.dat       = regions.filename    // [optional] input file
+
+
+[ run ]
+
+ti#.dat       = hard_training_image.filename
+3 3 1        = hard_template_dimensions
+3            = #_of_multiple_grids
+
+
+// [ eof ]

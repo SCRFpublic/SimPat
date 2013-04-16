@@ -1,0 +1,30 @@
+
+// sample for hard data conditioning
+
+
+[ general ]
+
+1.0.0_RC3  = simpatc_version
+1      = analysis_level
+
+
+
+[ realizations ]
+
+100 100 1 = dimensions
+
+
+[ data ]
+
+bodydata.dat = hard_data.filename
+4	     = hard_data.column_index
+
+[ run ]
+
+ti.dat       = hard_training_image.filename
+// 0.5      = sampling_frequency  // use only 50% of all patterns
+7 7 1        = hard_template_dimensions
+3            = #_of_multiple_grids
+
+
+// [ eof ]

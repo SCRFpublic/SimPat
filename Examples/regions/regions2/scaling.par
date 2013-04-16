@@ -1,0 +1,8 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               parameter file                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ti.dat		% the input file name
+ti.dat.2.scale		% the output file name
+3			% method for data preparation (Scaling)
+125 125 1 		% Field size after scaling

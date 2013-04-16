@@ -1,0 +1,8 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               parameter file                       %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ti.dat		        % the input file name
+soft_ti_lesssmooth.dat		% the output file name
+5			% method for data preparation (Moving Average)
+11 11 1 		% Template size for moving average

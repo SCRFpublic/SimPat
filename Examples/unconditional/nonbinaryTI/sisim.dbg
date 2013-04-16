@@ -1,0 +1,66 @@
+
+ Category  number  1 =        0.000
+           global prob value =   0.2000
+           number of structures =   1
+           nugget effect        =   0.1500
+           type of structure   1 =   1
+           aa parameter         =      30.0000
+           cc parameter         =       0.8500
+           ang1, ang2, ang3     =   0.00  0.00  0.00
+           anis1, anis2         =       1.0000      0.3333
+
+ Category  number  2 =        1.000
+           global prob value =   0.2000
+           number of structures =   1
+           nugget effect        =   0.1000
+           type of structure   1 =   1
+           aa parameter         =      40.0000
+           cc parameter         =       0.9000
+           ang1, ang2, ang3     =  45.00  0.00  0.00
+           anis1, anis2         =       0.2500      0.2500
+
+ Category  number  3 =        2.000
+           global prob value =   0.2000
+           number of structures =   1
+           nugget effect        =   0.1000
+           type of structure   1 =   1
+           aa parameter         =      40.0000
+           cc parameter         =       0.9000
+           ang1, ang2, ang3     = -45.00  0.00  0.00
+           anis1, anis2         =       0.2500      0.2500
+
+ Category  number  4 =        3.000
+           global prob value =   0.1500
+           number of structures =   1
+           nugget effect        =   0.1000
+           type of structure   1 =   1
+           aa parameter         =     100.0000
+           cc parameter         =       0.9000
+           ang1, ang2, ang3     =  90.00  0.00  0.00
+           anis1, anis2         =       0.0100      0.1000
+
+ Category  number  5 =        4.000
+           global prob value =   0.1500
+           number of structures =   1
+           nugget effect        =   0.1500
+           type of structure   1 =   1
+           aa parameter         =     100.0000
+           cc parameter         =       0.8500
+           ang1, ang2, ang3     =   0.00  0.00  0.00
+           anis1, anis2         =       0.0100      0.1000
+
+ Finished simulation  1
+     threshold   1 input cdf = 0.2000 realization cdf = 0.2914
+     threshold   2 input cdf = 0.2000 realization cdf = 0.2540
+     threshold   3 input cdf = 0.2000 realization cdf = 0.1829
+     threshold   4 input cdf = 0.1500 realization cdf = 0.1319
+     threshold   5 input cdf = 0.1500 realization cdf = 0.1398
+
+ Summary of order relations: 
+     threshold 1 number =  22470 average =   0.0600 maximum =   0.7270
+     threshold 2 number =  22470 average =   0.0634 maximum =   0.7306
+     threshold 3 number =  22470 average =   0.0429 maximum =   0.7275
+     threshold 4 number =  22470 average =   0.0506 maximum =   0.7739
+     threshold 5 number =  22470 average =   0.0504 maximum =   0.8027
+
+ total of          99.888863% with average of   0.0535

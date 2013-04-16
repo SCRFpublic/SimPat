@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <title>SIMPATC User's Manual - Input Files</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+  <link rel="shortcut icon" type="image/ico" href="./format/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="./format/manual.css">
+</head>
+
+<body>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++ header ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div id="header"><table><tr>
+  <td id="left"><span id="title">SIMPATC User's Manual</span></td>
+  <td id="right"><ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="overview.html">Overview</a></li>
+    <li><a href="quick_start.html">Quick Start</a></li>
+    <li><a class="selected" href="input_files.html">Input Files</a></li>
+    <li><a href="parameter_files.html">Parameter Files</a></li>
+    <li><a href="tips_tricks.html">Tips &amp; Tricks</a></li>
+    <li id="last"><a class="external" href="http://ekofisk.stanford.edu/SCRFweb/">SCRF</a></li>
+  </ul></td>
+</tr></table></div>
+<!-- +++ /header +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<table id="main_layout"><tr>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++ topics ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<td class="topics">
+
+<div class="topics"><span id="title">Topics</span>&nbsp;&nbsp;(&nbsp;All&nbsp;)<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="quick_start.html">Quick Start</a></li>
+<li><a class="selected" href="input_files.html">Input Files</a></li>
+<li><a href="parameter_files.html">Parameter Files</a></li>
+<li><a href="group_general.html">Group: General</a></li>
+<li><a href="group_realizations.html">Group: Realizations</a></li>
+<li><a href="group_data.html">Group: Data</a></li>
+<li><a href="group_run.html">Group: Run</a></li>
+<li><a href="group_simulation.html">Group: Simulation</a></li>
+<li><a href="tips_tricks.html">Tips &amp; Tricks</a></li>
+</ul></div>
+
+<div class="topics"><span id="title">Input Files</span><ul>
+  <li><a href="#gsx_format">GSX Format</a></li>
+  <li><a href="#multiple_band_files">Multiple-band Files</a></li>
+  <li><a href="#regional_files">Regional Files</a></li>
+</ul></div>
+
+</td>
+<!-- +++ /topics +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++ content +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<td id="content"><div id="content">
+<h1>3. Input Files</h1>
+
+<p>SIMPATC has a certain number format requirements for its input files. This
+section explains these requirements. <i><b>See also section <a href="overview.html#limitations">Limitations</a> for
+additional requirements of version 1.0.0_RC3 concerning input files.</b></i></p>
+
+<h2 id="gsx_format">3.1. GSX Format</h2>
+
+<p>All input files to SIMPATC (such as data files, training images, etc.) must
+use the GSX format. SIMPATC does not have any parameters that allows the user
+to enter grid dimensions of input files and relies on the GSX information to
+obtain this information. Simply put, GSX is a modified version of
+the well-known <a class="external" href="http://ekofisk.stanford.edu/SCRFweb/GSLIB/">GSLIB</a> format with a special
+section added to GSLIB headers.</p>
+
+<p>GSLIB is a library of Fortran 77 programs containing a rich set of
+geostatistical tools, original published by <a class="external" href="http://ekofisk.stanford.edu/SCRFweb/">SCRF</a>.
+All GSLIB programs use the same data file format known as the GSLIB data file
+format and sometimes also called "simplified Geo-EAS format".</p>
+
+<p>GSX stands for "extended GSLIB file format" and is 100% backward-compatible
+with the current GSLIB files, i.e. a software capable of reading GSLIB files
+(such as <a class="external" href="http://ekofisk.stanford.edu/SCRFweb/sgems/">S-GEMS</a>) will still be able to read
+GSX files (without benefiting from the new capabilities, though). GSX extends
+the GSLIB file format by adding a special section to the title of the GSLIB
+header.  This special section informs GSX-aware software (such as SIMPATC)
+about the type of the file (either a Cartesian grid file or a point set) and
+supplies extra information depending on this file type.</p>
+
+<p><span class="h3">Cartesian grids</span>. For Cartesian grid files, the special section contains the dimensions of
+the grid.  For example, the title,</p>
+
+<div class="code">my title  [! GSX1 CG=100*100*10</div>
+
+<p>denotes that (1) this file is a Cartesian grid file ( "CG" stands for
+Cartesian grid ) and (2) the grid has the dimensions 100 &times; 100 &times; 10.</p>
+
+<p>GSX requires that each dimension is specified. For 2D grids, use "1" in
+place of the missing dimension. For example, for a 100 &times; 1 &times; 100
+cross-section, use this title:</p>
+
+<div class="code">my title  [! GSX1 CG=100*1*100</div>
+
+<p>Note that, using "<code>100*100*1</code>" instead of "<code>100*1*100</code>"
+would also work but that way, you would lose the information stating that
+the file contains an x-z cross-section.</p>
+
+<p><span class="h3">Point sets</span>. For point set files, the special section contains the column indices for
+the coordinates of the points.  For example, the title,</p>
+
+<div class="code">my title [! GSX1 PS=1,2,3</div>
+
+<p>denotes that (1) this file is a point set file ( "PS" stands for point set )
+and (2) the column indices for the i, j, k coordinates are 1, 2 and 3.</p>
+
+<p>GSX requires that each column index is specified. For 2D point sets, use "0"
+in place of the missing column index. For example, for points from a 2D x-z
+cross-section, use this title:</p>
+
+<div class="code">my title [! GSX1 PS=1,0,2</div>
+
+<p>Note that, using "<code>1,2,0</code>" instead of "<code>1,0,2</code>" would
+also work but that way, you would lose the information stating that the file
+contains points belonging to an x-z cross-section.</p>
+
+<p><span class="h3">Unknown identifiers</span>. For both Cartesian grids and
+point sets, the special section can also contain an unknown identifier (also
+known as a no-data or missing value). For example, the title,</p>
+
+<div class="code">my title  [! GSX1 CG=100*100*10 UI=-999</div>
+
+<p>denotes that, in addition to the Cartesian grid information, this file uses
+"-999" as the unknown identifier.</p>
+
+<p><span class="h3">Specification</span>. The complete GSX format is as follows:</p>
+
+<div class="code">&lt;title&gt; [! GSX&lt;gsx-version&gt; CG=&lt;ni&gt;*&lt;nj&gt;*&lt;nk&gt; PS=&lt;i&gt;;&lt;j&gt;;&lt;k&gt; UI=&lt;unknown-identifier&gt;</div>
+
+<p>In the above format <code>&lt;title&gt;</code> is optional. The character
+sequence "<code>[!</code>" is required and identifies the start of the GSX
+section. "<code>GSX&lt;gsx-version&gt;</code>" is required and currently must
+read "<code>GSX1</code>". The other parts are all optional but a GSX section
+must contain at least one of "<code>CG</code>", "<code>PS</code>" or "<code>UI</code>"
+identifiers. Note that, the characters "<code>=</code>", "<code>*</code>" and "<code>;</code>"
+are purely for decoration and can be replaced with whitespace (space and tab)
+if desired, i.e. this GSX section,</p>
+
+<div class="code"> mytitle [! GSX1 CG=100*100*1 UI=-999</div>
+
+<p>is equivalent to the below GSX section:</p>
+
+<div class="code"> mytitle [! GSX1 CG 100 100 1 UI -999</div>
+
+<p>Although the GSX specification itself allows a file to be both Cartesian grid
+and a point set (i.e. coordinates for all the nodes of a grid are given in
+the file), SIMPATC does not support such files and considers them to be equal
+to Cartesian grid files.</p>
+
+
+<h2 id="multiple_band_files">3.2. Multiple-band Files</h2>
+
+<p>In addition to the GSX requirement, multiple-band data (also called
+vectorial data) must reside in sequential columns in a GSX file. In other
+words, if the first band of the data resides in column 1 and the data has three
+bands, the second band must be in column 2 and the last band, column 3.
+Note that, the start column does not need to be the first column (as explained
+in the section <a href="parameter_files.html#filenames">Parameter Files</a>).
+For example, the first band of the data can reside in column 2. In such a case,
+other bands must reside in column 3 and 4 respectively. The number of bands in
+an image is typically given by a separate parameter.</p>
+
+
+<h2 id="regional_files">3.3. Regional Files</h2>
+
+<p>Regional files (namely, hard and soft training images) must be enumerated
+with the region code in their filenames. For example, if a two-region run is
+to be performed with the first region code 0 and the second region code 1,
+the training image files should be named "ti.dat.0" and "ti.dat.1".
+In other words, a regional filename (on the harddisk) must have the form:</p>
+
+<div class="code">&lt;filename&gt;.&lt;extension&gt;.&lt;region-code&gt;</div>
+
+<p>This requirement is for the filenames of the actual files and not for entering
+the filename into a PAR file. When entering filenames into PAR files, the last
+part of the filename, namely <code>.&lt;region-code&gt;</code> is not entered.
+In other words, regional filenames in PAR files are given as:</p>
+
+<div class="code">&lt;filename&gt;.&lt;extension&gt; = filename-parameter</div>
+
+<p>When loading the files, SIMPATC automatically attaches the correct region code to the base filename and
+looks for the regional file during a run. Section <a href="parameter_files.html#filenames">Parameter Files</a>
+explains how to enter filenames into PAR files.</p>
+
+<p>One might wonder why this scheme is preferred over explicitly allowing
+entry of different filenames for each region. Since SIMPATC can handle many
+regions at once, explicit regional filenames would impose unnecessary burden
+on the user. In the current scheme, you just give a single filename and denote
+that the simulation is a region simulation in a separate parameter. With this
+information, SIMPATC automatically loads the correct training image file for
+a region without the need for the user to enter all the filenames explicitly.</p>
+
+</div></td>
+<!-- +++ /content ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++ index +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<td class="index"><div class="index"><span id="title">Parameters</span><ul>
+
+<li><a title="[ run ]" href="group_run.html#n_hard_bands">#_of_hard_bands</a></li>
+<li><a title="[ run ]" href="group_run.html#n_multiple_grids">#_of_multiple_grids</a></li>
+<li><a title="[ realizations ]" href="group_realizations.html#n_realizations">#_of_realizations</a></li>
+<li><a title="[ data ]" href="group_data.html#n_regions">#_of_regions</a></li>
+<li><a title="[ run ]" href="group_run.html#n_simulations">#_of_simulations</a></li>
+<li><a title="[ run ]" href="group_run.html#n_soft_bands">#_of_soft_bands</a></li>
+<li><a title="[ general ]" href="group_general.html#analysis_level">analysis_level</a></li>
+<li><a title="[ realizations ]" href="group_realizations.html#dimensions">dimensions</a></li>
+<li><a title="[ realizations ]" href="group_realizations.html#filename">filename</a></li>
+<li><a title="[ data ]" href="group_data.html#hard_data">hard_data</a>+</li>
+<li><a title="[ run ]" href="group_run.html#hard_template_dimensions">hard_template_dimensions</a></li>
+<li><a title="[ simulation ]" href="group_simulation.html#hard_template_expansion">hard_template_expansion</a></li>
+<li><a title="[ run ]" href="group_run.html#hard_training_image">hard_training_image</a>+</li>
+<li><a title="[ data ]" href="group_data.html#init_data">init_data</a>+</li>
+<li><a title="[ realizations ]" href="group_realizations.html#random_seed">random_seed</a></li>
+<li><a title="[ data ]" href="group_data.html#regions">regions</a>+</li>
+<li><a title="[ run ]" href="group_run.html#sampling_frequency">sampling_frequency</a></li>
+<li><a title="[ general ]" href="group_general.html#simpatc_version">simpatc_version</a></li>
+<li><a title="[ data ]" href="group_data.html#soft_data">soft_data</a>+</li>
+<li><a title="[ run ]" href="group_run.html#soft_template_dimensions">soft_template_dimensions</a></li>
+<li><a title="[ simulation ]" href="group_simulation.html#soft_template_expansion">soft_template_expansion</a></li>
+<li><a title="[ run ]" href="group_run.html#soft_training_image">soft_training_image</a>+</li>
+<li><a title="[ run ]" href="group_run.html#stop_after_multiple_grid">stop_after_multiple_grid</a></li>
+
+</ul><br>+ indicates this parameter<br>has sub-parameters</div></td>
+<!-- +++ /index ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+</tr></table>
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++ footer ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<div id="footer">Copyright © 2000 - 2005 by <a class="external" href="http://www.burcarpat.com/">Guven Burc ARPAT</a>
+and The Board of Trustees of the <a class="external" href="http://ekofisk.stanford.edu/SCRFweb/">Leland Stanford Junior University</a>.&nbsp;
+All rights reserved.</div>
+<!-- +++ /footer +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+</body>
+
+</html>
+

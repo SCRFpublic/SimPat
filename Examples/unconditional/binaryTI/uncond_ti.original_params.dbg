@@ -1,0 +1,10 @@
+_generated_on = Wed Mar 09 14:51:39 2005
+_par_filename = M:/SCRF/BOSENI2005/software/SIMPAT/Examples/unconditional/binaryTI/uncond_ti.par
+general.analysis_level = 1
+general.simpatc_version = 1.0.0_RC3
+realizations.#_of_realizations = 1
+realizations.dimensions = 100 100 1
+realizations.random_seed = 1975091
+run.#_of_multiple_grids = 3
+run.hard_template_dimensions = 9 9 1
+run.hard_training_image.filename = ti.dat

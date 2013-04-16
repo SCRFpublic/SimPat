@@ -1,0 +1,150 @@
+
+// Generated on Wed Feb 02 11:31:53 2005
+// from PAR file "M:/from_burch/BOStest/hard_cond.par"
+
+
+// these below values are used internally and given here for debugging
+// purposses only.  you can think of parameter lines with these values
+// as if they were commented out or defaulted
+//
+// nofile_keyword = nofile
+// unknown_uint = 4294967295
+// unknown_dims = 2147483647 2147483647 2147483647
+// unknown_steps = 2147483647 2147483647 2147483647
+
+
+[ general ]
+
+0.9.9 = simpatc_version
+1 = #_of_cpus
+1 = analysis_level
+1 = debug_level
+
+
+[ realizations ]
+
+100 100 1 = dimensions
+hard_cond.out = filename
+19750929 = random_seed
+1 = #_of_realizations
+
+
+[ data ]
+
+nofile = init_data.filename
+0 = init_data.column_index
+hard_data.dat = hard_data.filename
+0 = hard_data.column_index
+nofile = soft_data.filename
+0 = soft_data.column_index
+nofile = regions.filename
+0 = regions.column_index
+
+
+[ run ]
+
+7 = #_of_simulations
+0 = #_of_multiple_grids
+4294967295 = active_region
+ti.dat = hard_training_image.filename
+0 = hard_training_image.column_index
+nofile = soft_training_image.filename
+0 = soft_training_image.column_index
+1 = #_of_hard_bands
+0 = #_of_soft_bands
+3 3 1 = hard_template_dimensions
+2147483647 2147483647 2147483647 = soft_template_dimensions
+
+
+[ simulation-1 ]
+
+4294967295 = active_region
+ti.dat = hard_training_image.filename
+0 = hard_training_image.column_index
+nofile = soft_training_image.filename
+0 = soft_training_image.column_index
+3 3 1 = hard_template_dimensions
+2147483647 2147483647 2147483647 = soft_template_dimensions
+7 7 7 = hard_template_expansion
+2147483647 2147483647 2147483647 = soft_template_expansion
+
+
+[ simulation-2 ]
+
+4294967295 = active_region
+ti.dat = hard_training_image.filename
+0 = hard_training_image.column_index
+nofile = soft_training_image.filename
+0 = soft_training_image.column_index
+3 3 1 = hard_template_dimensions
+2147483647 2147483647 2147483647 = soft_template_dimensions
+6 6 6 = hard_template_expansion
+2147483647 2147483647 2147483647 = soft_template_expansion
+
+
+[ simulation-3 ]
+
+4294967295 = active_region
+ti.dat = hard_training_image.filename
+0 = hard_training_image.column_index
+nofile = soft_training_image.filename
+0 = soft_training_image.column_index
+3 3 1 = hard_template_dimensions
+2147483647 2147483647 2147483647 = soft_template_dimensions
+5 5 5 = hard_template_expansion
+2147483647 2147483647 2147483647 = soft_template_expansion
+
+
+[ simulation-4 ]
+
+4294967295 = active_region
+ti.dat = hard_training_image.filename
+0 = hard_training_image.column_index
+nofile = soft_training_image.filename
+0 = soft_training_image.column_index
+3 3 1 = hard_template_dimensions
+2147483647 2147483647 2147483647 = soft_template_dimensions
+4 4 4 = hard_template_expansion
+2147483647 2147483647 2147483647 = soft_template_expansion
+
+
+[ simulation-5 ]
+
+4294967295 = active_region
+ti.dat = hard_training_image.filename
+0 = hard_training_image.column_index
+nofile = soft_training_image.filename
+0 = soft_training_image.column_index
+3 3 1 = hard_template_dimensions
+2147483647 2147483647 2147483647 = soft_template_dimensions
+3 3 3 = hard_template_expansion
+2147483647 2147483647 2147483647 = soft_template_expansion
+
+
+[ simulation-6 ]
+
+4294967295 = active_region
+ti.dat = hard_training_image.filename
+0 = hard_training_image.column_index
+nofile = soft_training_image.filename
+0 = soft_training_image.column_index
+3 3 1 = hard_template_dimensions
+2147483647 2147483647 2147483647 = soft_template_dimensions
+2 2 2 = hard_template_expansion
+2147483647 2147483647 2147483647 = soft_template_expansion
+
+
+[ simulation-7 ]
+
+4294967295 = active_region
+ti.dat = hard_training_image.filename
+0 = hard_training_image.column_index
+nofile = soft_training_image.filename
+0 = soft_training_image.column_index
+3 3 1 = hard_template_dimensions
+2147483647 2147483647 2147483647 = soft_template_dimensions
+1 1 1 = hard_template_expansion
+2147483647 2147483647 2147483647 = soft_template_expansion
+
+
+// [ eof ]

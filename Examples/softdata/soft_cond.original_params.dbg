@@ -1,0 +1,12 @@
+_generated_on = Mon Mar 07 14:39:46 2005
+_par_filename = M:/SCRF/BOSENI2005/software/SIMPAT/Examples/softdata/soft_cond.par
+data.soft_data.filename = soft_data.dat
+general.analysis_level = 1
+general.simpatc_version = 1.0.0_RC3
+realizations.dimensions = 100 100 1
+run.#_of_multiple_grids = 3
+run.hard_template_dimensions = 5 5 1
+run.hard_training_image.filename = ti.dat
+run.soft_template_dimensions = 5 5 1
+run.soft_training_image.filename = soft_ti.dat
+run.stop_after_multiple_grid = 2

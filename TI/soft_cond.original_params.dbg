@@ -1,0 +1,12 @@
+_generated_on = Wed Feb 02 12:25:45 2005
+_par_filename = M:/from_burch/BOStest/soft_cond.par
+data.soft_data.filename = soft_data.dat
+general.analysis_level = 1
+general.debug_level = 1
+general.simpatc_version = 0.9.9
+realizations.dimensions = 100 100 1
+run.#_of_multiple_grids = 0
+run.hard_template_dimensions = 5 5 1
+run.hard_training_image.filename = ti.dat
+run.soft_template_dimensions = 1 1 1
+run.soft_training_image.filename = soft_ti.dat

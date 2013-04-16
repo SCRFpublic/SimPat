@@ -1,0 +1,27 @@
+
+// sample for an unconditional realization
+
+
+[ general ]
+
+1.0.0_RC3  = simpatc_version
+3      = analysis_level
+
+
+
+[ realizations ]
+
+100 50 20 = dimensions
+197509     = random_seed        // [optional] 0 to seed from the time
+
+[ run ]
+
+tidal.dat    = hard_training_image.filename
+7 7 3        = hard_template_dimensions
+3            = #_of_multiple_grids
+2	       = stop_after_multiple_grid
+
+
+
+
+// [ eof ]

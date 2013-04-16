@@ -1,0 +1,11 @@
+_generated_on = Mon Mar 07 13:07:01 2005
+_par_filename = M:/SCRF/BOSENI2005/software/SIMPAT/Examples/unconditional/nonbinaryTI/uncond_3Dti.par
+general.analysis_level = 1
+general.simpatc_version = 1.0.0_RC3
+realizations.dimensions = 51 51 21
+realizations.random_seed = 197507
+run.#_of_multiple_grids = 3
+run.hard_template_dimensions = 7 7 3
+run.hard_training_image.filename = 3Dti.dat
+run.sampling_frequency = 0.75
+run.stop_after_multiple_grid = 2
